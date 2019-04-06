@@ -189,6 +189,7 @@ def try_cythonize(extensions, linetracing=False, mandatory=True):
             )
         return extensions
     cython_compiler_directives = {}
+    cython_compiler_directives['language_level'] = '3'
     if linetracing:
         additional_define_macros = [('CYTHON_TRACE_NOGIL', '1')]
         cython_compiler_directives['linetrace'] = True
